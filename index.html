@@ -25,13 +25,13 @@
             <nav id="navbar-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none">
               <ul class="block lg:flex">
                 <li class="group">
-                  <a href="/index.html" class="text-base text-Dark py-2 mx-8 flex group-hover:text-Hijau">Home</a>
+                  <a href="#home" class="text-base text-Dark py-2 mx-8 flex group-hover:text-Hijau">Home</a>
                 </li>
                 <li class="group">
-                  <a href="/register.html" class="text-base text-Dark py-2 mx-8 flex group-hover:text-Hijau">Register</a>
+                  <a href="#register" class="text-base text-Dark py-2 mx-8 flex group-hover:text-Hijau">Register</a>
                 </li>
                 <li class="group">
-                  <a href="/live.html" class="text-base text-Dark py-2 mx-8 flex group-hover:text-Hijau">Live Score</a>
+                  <a href="#live" class="text-base text-Dark py-2 mx-8 flex group-hover:text-Hijau">Live Score</a>
                 </li>
               </ul>
             </nav>
@@ -76,6 +76,55 @@
     </section>
     <!-- HERO SECTION END -->
 
+    <!-- REGISTER -->
+    <section id="register" class="pt-36 mt-20 mb-20">
+      <div class="container mx-auto">
+        <div class="flex flex-wrap">
+          <div class="w-full self-center px-4">
+            <ul>
+              <li class="font-bold text-2xl mb-5">📌Syarat Dan Ketentuan Pendaftaran :</li>
+            </ul>
+            <ul>
+              <li class="mb-2">- Melampirkan FC KTP atau Surat Keterangan Aparatur Wilayah Setempat Jika Pemain Bukan Ber-KTP RW 03 Nanggewer Mekar</li>
+              <li class="mb-2">- Kebersihan Dan Ketertiban di Tempat Turnamen Merupakan Kewajiban Dan Tanggung Jawab Bersama (Tim dan Panitia).</li>
+              <li class="mb-2">- Biaya Registrasi Sebesar Rp.450.000.,/Tim</li>
+              <li class="mb-2">- Pendaftaran Akan Di Tutup Pada Tanggal 6 Juli 2024 Pukul 20:00 .</li>
+              <li class="mb-2">- Penanggung Jawab Tim Wajib Hadir Pada Sesi Technical Meeting Pada Tanggal 27 Juli 2024 Pada Pukul 20:00 Yang Bertempat Di Balereoth</li>
+            </ul>
+
+            <h2 class="text-Hijau mb-10 mt-10 text-xl font-bold">
+              Waktu Pendaftaran 20 Juni s/d 6 Juli 2024
+              <br />
+              <span> Good Luck! 🤞</span>
+            </h2>
+            <!-- <p class="font-medium text-slate-400 mb-10 leading-relaxed">Belajar Web Programing itu mudah dan menyenangkan! Hah</p> -->
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSePET2I2Oe-HWx5JwoxqJIoaJSrKRIJy9I-bBEuYkIDBqlcKQ/viewform?usp=sf_link "
+              class="text-base font-semibold bg-Hijau py-3 text-white px-8 rounded-full hover:shadow-lg hover:bg-Dark hover:opacity-80 transition duration-300 ease-in-out"
+              target="_blank"
+              >Daftar</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END REGISTER -->
+
+    <!-- LIVE SCORE -->
+    <section id="live" class="pt-36 mt-32">
+      <div class="container mx-auto">
+        <div class="flex flex-wrap">
+          <div class="w-full md:w-1/2 self-end px-4 mb-20">
+            <!--  -->
+            <div class="items-end justify-end">
+              <h1 class="text-Dark text-2xl font-mono font-bold">Jadwal Pertandingan Akan Dimulai:</h1>
+              <div id="countdown" class="text-4xl font-bold text-Hijau mt-4 font-mono"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END LIVE SCORE -->
     <!-- FOOTER -->
     <footer class="bg-Dark pt-24 pb-12 mt-40">
       <div class="container mx-auto">
@@ -92,13 +141,13 @@
             <h3 class="font-semibold text-xl text-white mb-5">Tautan</h3>
             <ul class="text-slate-300">
               <li>
-                <a href="/index.html" class="inline-block text-base text-white hover:text-Hijau">Home</a>
+                <a href="#home" class="inline-block text-base text-white hover:text-Hijau">Home</a>
               </li>
               <li>
-                <a href="/register.html" class="inline-block text-base text-white hover:text-Hijau">Register</a>
+                <a href="#register" class="inline-block text-base text-white hover:text-Hijau">Register</a>
               </li>
               <li>
-                <a href="/live.html" class="inline-block text-base text-white hover:text-Hijau">Live Score</a>
+                <a href="#live" class="inline-block text-base text-white hover:text-Hijau">Live Score</a>
               </li>
             </ul>
           </div>
@@ -139,5 +188,29 @@
     </footer>
     <!-- END FOOTER -->
     <script src="dist/js/script.js"></script>
+    <script>
+      // Menghitung mundur dari sekarang hingga 30 Juli
+      const countdownDate = new Date("2024-07-30T00:00:00Z").getTime();
+
+      const countdownElement = document.getElementById("countdown");
+
+      // Update countdown setiap detik
+      const countdownInterval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        if (distance <= 0) {
+          clearInterval(countdownInterval);
+          countdownElement.innerText = "Pertandingan dimulai!";
+        } else {
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          countdownElement.innerText = `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
+        }
+      }, 1000);
+    </script>
   </body>
 </html>
